@@ -28,7 +28,8 @@ export class PropertyPaneTextDialog implements IPropertyPaneField<IPropertyPaneT
       disabled: properties.disabled,
       strings: properties.strings,
       onRender: this.onRender.bind(this),
-      key: targetProperty
+      key: targetProperty,
+      scriptRoot: properties.scriptRoot
     };
   }
 
@@ -58,7 +59,8 @@ export class PropertyPaneTextDialog implements IPropertyPaneField<IPropertyPaneT
       disabled: this.properties.disabled,
       strings: this.properties.strings,
       // required to allow the component to be re-rendered by calling this.render() externally
-      stateKey: new Date().toString()
+      stateKey: new Date().toString(),
+      scriptRoot: this.properties.scriptRoot
     });
 
     ReactDom.render(textDialog, elem);

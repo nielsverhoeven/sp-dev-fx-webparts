@@ -281,6 +281,11 @@ export default class SearchResultsWebPart extends BaseClientSideWebPart<ISearchR
     
         const canEditTemplate = this.properties.externalTemplateUrl && this.properties.selectedLayout === ResultsLayoutOption.Custom ? false : true;
 
+        let scriptRoot = this.context.manifest.loaderConfig.internalModuleBaseUrls[0];
+        if(scriptRoot.indexOf("localhost") != -1) {
+            scriptRoot += "dist/";
+        }
+
         // Sets up styling fields
         let stylingFields: IPropertyPaneField<any>[] = [
             PropertyPaneToggle('showBlank', {
@@ -309,7 +314,8 @@ export default class SearchResultsWebPart extends BaseClientSideWebPart<ISearchR
                     dialogButtonText: strings.DialogButtonText,
                     dialogTitle: strings.DialogTitle,
                     saveButtonText: strings.SaveButtonText
-                }
+                },
+                scriptRoot: scriptRoot
             })
         ];
     

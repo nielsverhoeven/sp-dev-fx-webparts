@@ -5,4 +5,5 @@ export interface IPropertyPaneTextDialogProps {
   onPropertyChange: (propertyPath: string, text: string) => void;
   disabled?: boolean;
   strings: ITextDialogStrings;
+  scriptRoot: string;
 }

@@ -4,7 +4,8 @@ import { Button, ButtonType } 			        from 'office-ui-fabric-react/lib/Button
 import { Label } 							    from 'office-ui-fabric-react/lib/Label';
 import { ITextDialogProps }                  	from './ITextDialogProps';
 import { ITextDialogState }                  	from './ITextDialogState';
-import AceEditor 								from 'react-ace';
+//import AceEditor 								from 'react-ace';
+import DynamicAceEditor                         from './DynamicAceEditor';
 import styles                                   from './TextDialog.module.scss';
 import './AceEditor.module.scss';
 
@@ -98,7 +99,7 @@ export class TextDialog extends React.Component<ITextDialogProps, ITextDialogSta
 							}
 						}>
 				
-					<AceEditor
+					<DynamicAceEditor
 						width="600px"
 						mode="html"
 						theme="monokai"
@@ -107,7 +108,8 @@ export class TextDialog extends React.Component<ITextDialogProps, ITextDialogSta
 						showGutter= { true }
 						onChange={ this.onDialogTextChanged.bind(this) }
 						value={ this.state.dialogText }
-						name="CodeEditor"
+                        name="CodeEditor"
+                        scriptRoot={ this.props.scriptRoot }
 						/>
 
 					<DialogFooter>

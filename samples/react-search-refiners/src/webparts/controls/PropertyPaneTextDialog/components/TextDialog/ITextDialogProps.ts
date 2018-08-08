@@ -6,4 +6,5 @@ export interface ITextDialogProps {
   disabled?: boolean;
   strings: ITextDialogStrings;
   stateKey?: string;
+  scriptRoot: string;
 }
