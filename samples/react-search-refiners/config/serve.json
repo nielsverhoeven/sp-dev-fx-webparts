@@ -9,7 +9,7 @@
   },
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://localhost:5432/workbench"
+      "pageUrl": "https://techmikael.sharepoint.com/teams/CommSite/_layouts/15/workbench.aspx"
     },
     "queryStringDataSource": {
       "pageUrl": "https://collaborationcorner.sharepoint.com/teams/PnPIntranet/SitePages/Search(1).aspx",
