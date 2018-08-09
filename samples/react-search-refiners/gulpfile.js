@@ -15,7 +15,6 @@ build.configureWebpack.mergeConfig({
     additionalConfiguration: (generatedConfiguration) => {
 
         generatedConfiguration.resolve.alias = { handlebars: 'handlebars/dist/handlebars.min.js' };
-
         generatedConfiguration.module.rules.push(
             {
                 test: /utils\.js$/,
@@ -45,14 +44,13 @@ build.configureWebpack.mergeConfig({
     }
 });
 
-let copyAce = build.subTask('copy-files', function (gulp, buildOptions, done) {
-    gulp.src('./node_modules/react-ace/dist/react-ace.min.js')
+let copyDynamic = build.subTask('copy-dynamic-load-files', function (gulp, buildOptions, done) {
+    gulp.src('./assets/preconf-react-ace.min.js')
         .pipe(gulp.dest('./temp/deploy'))
         .pipe(gulp.dest('./dist'));
+    
     done();
 });
 
-build.rig.addPostBuildTask(copyAce);
-
-
+build.rig.addPostBuildTask(copyDynamic);
 build.initialize(gulp);

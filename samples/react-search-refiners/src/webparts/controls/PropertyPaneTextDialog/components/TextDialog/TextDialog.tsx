@@ -9,11 +9,6 @@ import DynamicAceEditor                         from './DynamicAceEditor';
 import styles                                   from './TextDialog.module.scss';
 import './AceEditor.module.scss';
 
-import 'brace';
-import 'brace/mode/html';
-import 'brace/theme/monokai';
-import 'brace/ext/language_tools';
-
 export class TextDialog extends React.Component<ITextDialogProps, ITextDialogState> {
 
     /*************************************************************************************

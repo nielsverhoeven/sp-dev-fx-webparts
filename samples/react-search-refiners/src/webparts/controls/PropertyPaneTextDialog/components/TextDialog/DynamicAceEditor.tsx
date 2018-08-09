@@ -14,7 +14,7 @@ export default class DynamicAceEditor extends React.Component<any, IDynamicAceEd
     }
 
     private async loadEditor(): Promise<any> {
-        let aceEditor: any = await SPComponentLoader.loadScript(this.props.scriptRoot + '/react-ace.min.js', { globalExportsName: "DynamicAceEditor" });
+        let aceEditor: any = await SPComponentLoader.loadScript(this.props.scriptRoot + '/preconf-react-ace.min.js', { globalExportsName: "DynamicAceEditor" });
         let element = React.createElement(aceEditor.default, this.props);
         this.setState({ editor: element, ready: true });
     }
